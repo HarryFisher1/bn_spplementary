@@ -18,6 +18,8 @@ pacman::p_load(tidyverse, knitr, papaja, kableExtra)
 options(tinytex.verbose = TRUE)
 ```
 
+# Introduction
+
 In traditional sports injury research, statistical analysis techniques such as correlational analysis and logistic regression are commonly used examine the relationship between predictor variables and injury occurrence. 
 While easily accessible to most researchers, these techniques have been limited in their ability to successfully identify predictive factors, and are unable to fully account the complex and multifactorial nature of injury occurrence due to their linear and reductionist assumptions.
 In contrast to traditional statistical methods used in the sports injury literature, @Bittencourt2016 proposed that analysis methods should take a complex-systems view of the injury problem, and attempt to capture the complex structure among a "web of determinants" (figure \@ref(fig:webofdeterminants)) to fully explore the interconnectivity between several factors and emergent behaviour. 
@@ -40,7 +42,7 @@ include_graphics("figs/measures/samiams/network2.png")
 
 <!-- Given the potentially complex relationship between psychological factors and markers of training related stress in the current research, a BN model may provide new insights into the interaction between different varibales and their relationship to sports injury.  -->
 
-## Example of building a network
+# Example of building a network
 
 The following sections provide an example of how a hypothetical BN could be constructed and used to examine the relationship between factors associated with sports injury, and describe three main step in BN modelling:
 
@@ -87,28 +89,22 @@ _Conditional independence queries_ can validate the association between two vari
 Finally, _most likely explanation queries_ can identify the most likely states of one or more variables.
 To provide an example, our hypothesised network has been fitted with simulated data to enable inference on the network dependencies.
 By altering the states of the parent nodes (NLE and Stiffness) we are able to investigate how the probability of the injury status node changes.
-Figure \@ref(fig:nlehigh) and figure \@ref(fig:nlestiffhigh) shown the change in probability of being injured when NLE and both NLE and stiffness are fixed to their "High" states.
-High major life events has the greatest increase on the probability of being injury in the example. High stiffness also increases probability of being injury by a further 10%. 
+Figure \@ref(fig:nlehigh) shows the change in probability of being injured when NLE (A) and both NLE and stiffness (B) are fixed to their "High" states.
+High major life events has the greatest increase on the probability of being injury in the example. High stiffness also increases probability of being injury by a further 8%. 
 
-```{r nlehigh, out.width="50%", fig.pos="H", fig.cap="NLE fixed to High", fig.align='center'}
-include_graphics("figs/measures/samiams/network4.png")
+```{r nlehigh, out.width="100%", fig.pos="H", fig.cap="NLE fixed to High", fig.align='center', fig.cap ='Network with NLE (A) and both NLE and Stiffness (B) set to \"High\"'}
+include_graphics("figs/measures/samiams/network4_5.png")
 ```
 
-```{r nlestiffhigh, out.width="50%", fig.pos="H", fig.cap="NLE and stiffness fixed to High", fig.align='center'}
-include_graphics("figs/measures/samiams/network5.png")
-```
-In contrast, when life events are "low" the probability of being healthy increases (figure \@ref(fig:nlelow)). However when stiffness is also set to low, probability of being healthy decreases by 20% indicating that "low" stiffness may actually increase probability of being injured, and there is an optimal level of stiffness required to remain healthy (figure \@ref(fig:nlestifflow)).  
 
-```{r nlelow, out.width="50%", fig.pos="H", fig.cap="NLE fixed to \"Low\"", fig.align='center'}
-include_graphics("figs/measures/samiams/network9.png") 
+In contrast, figure \@ref(fig:nlelow) shows the change in probability of being injured when NLE (A) and both NLE and stiffness (B) are fixed to their "Low" states. With "Low" NLE, the probability of injury has signficantly decreased to only 18%. However when stiffness is also set to low, probability of being injured increases by 20% indicating that "Low" stiffness may actually increase probability of being injured, and there is an optimal level of stiffness required to remain healthy (figure \@ref(fig:nlelow)).  
+
+```{r nlelow, out.width="100%", fig.cap='Networks with NLE (A) and NLE and Stiffness (B) set to \"Low\"', fig.pos="H", fig.align='center'}
+include_graphics("figs/measures/samiams/network8_9.png") 
 ```
 
-```{r nlestifflow, out.width="50%", fig.pos="H", fig.cap="NLE and Stiffness both fixed to \"Low\" ", fig.align='center', fig.height=5, fig.width=5}
-include_graphics("figs/measures/samiams/network8.png")
 
-```
-
-#### Summary
+# Summary
 
 Only a brief introduction to BNs has been provided and for a more thorough introduction to BN's the reader is referred to @Pearl1988 and @Eugene1991. 
 Additionally @Scutari2014 provides an informative introduction for fitting Bayesian models within the R computing environment. The `bnlearn` package by @Scutari2010 is a freely available for the R language, and is capable of fitting multinomial, continuous and hybrid (combination of discrete and continuous) networks using a variety of commonly used algorithms (e.g., search and score, constraint based and hybrid methods).  
