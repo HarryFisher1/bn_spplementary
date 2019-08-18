@@ -90,20 +90,20 @@ By altering the states of the parent nodes (NLE and Stiffness) we are able to in
 Figure \@ref(fig:nlehigh) and figure \@ref(fig:nlestiffhigh) shown the change in probability of being injured when NLE and both NLE and stiffness are fixed to their "High" states.
 High major life events has the greatest increase on the probability of being injury in the example. High stiffness also increases probability of being injury by a further 10%. 
 
-```{r nlehigh, out.width="50%", fig.pos="H", fig.cap="NLE fixed to High"}
+```{r nlehigh, out.width="50%", fig.pos="H", fig.cap="NLE fixed to High", fig.align='center'}
 include_graphics("figs/measures/samiams/network4.png")
 ```
 
-```{r nlestiffhigh, out.width="50%", fig.pos="H", fig.cap="NLE and stiffness fixed to High"}
+```{r nlestiffhigh, out.width="50%", fig.pos="H", fig.cap="NLE and stiffness fixed to High", fig.align='center'}
 include_graphics("figs/measures/samiams/network5.png")
 ```
 In contrast, when life events are "low" the probability of being healthy increases (figure \@ref(fig:nlelow)). However when stiffness is also set to low, probability of being healthy decreases by 20% indicating that "low" stiffness may actually increase probability of being injured, and there is an optimal level of stiffness required to remain healthy (figure \@ref(fig:nlestifflow)).  
 
-```{r nlelow, out.width="50%", fig.pos="H", fig.cap="NLE fixed to \"Low\""}
+```{r nlelow, out.width="50%", fig.pos="H", fig.cap="NLE fixed to \"Low\"", fig.align='center'}
 include_graphics("figs/measures/samiams/network9.png") 
 ```
 
-```{r nlestifflow, out.width="50%", fig.pos="H", fig.cap="NLE and Stiffness both fixed to \"Low\" "}
+```{r nlestifflow, out.width="50%", fig.pos="H", fig.cap="NLE and Stiffness both fixed to \"Low\" ", fig.align='center', fig.height=5, fig.width=5}
 include_graphics("figs/measures/samiams/network8.png")
 
 ```

@@ -30,7 +30,7 @@ footnotelist      : no
 linenumbers       : no
 mask              : no
 draft             : no
-output: papaja::apa6_docx
+output: papaja::apa6_pdf
 classoption: "man"
 documentclass: "apa6"
 ---
